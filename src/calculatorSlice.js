@@ -10,11 +10,13 @@ const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
-    addNumbers: (state, action) => {
-
+    setFirstNumber: (state, action) => {
+      console.log("state", state)
+      console.log("action", action)
+      // const firstNumber = state.firstNumber
     }
   }
 })
 
-export const {addNumbers} = calculatorSlice.actions
+export const {setFirstNumber} = calculatorSlice.actions
 export default calculatorSlice.reducer

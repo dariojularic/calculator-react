@@ -6,7 +6,7 @@ function CalculatorButtons() {
   return (
     <div className="buttons-grid">
       {buttons.map((button) => {
-        console.log(button);
+        // console.log(button);
         return <CalculatorActionButton key={button.value} classValue={button.classValue} value={button.value} />;
       })}
     </div>
