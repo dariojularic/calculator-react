@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
+import "./CalculatorActionButton.css";
 
-function CalculatorActionButton() {
+const CalculatorActionButton = ({ value, classValue }) => {
   const dispatch = useDispatch();
-  return <button></button>;
-}
+  return <button className={classValue}>{value}</button>;
+};
 
 export default CalculatorActionButton;

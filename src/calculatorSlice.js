@@ -10,6 +10,11 @@ const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
-    
+    addNumbers: (state, action) => {
+
+    }
   }
 })
+
+export const {addNumbers} = calculatorSlice.actions
+export default calculatorSlice.reducer
