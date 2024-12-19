@@ -31,7 +31,7 @@
 .clear-btn:hover {
   background-color: rgba(61, 175, 61, 0.7);
 }
-/*
+
 .delete-btn {
   background-color: rgb(228, 68, 68);
   grid-area: 2 / 3 / 1 / 5;
@@ -40,7 +40,7 @@
   font-size: 20px;
   padding: 0;
   cursor: pointer;
-} */
+}
 
 .delete-btn:hover {
   background-color: rgba(228, 68, 68, 0.7);
