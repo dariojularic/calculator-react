@@ -25,5 +25,5 @@ const calculatorSlice = createSlice({
   }
 })
 
-export const {setFirstNumber} = calculatorSlice.actions
-export default calculatorSlice.reducer
+// export const {setFirstNumber} = calculatorSlice.actions
+// export default calculatorSlice.reducer
