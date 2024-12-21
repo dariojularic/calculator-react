@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  firstNumber: 0,
-  secondNumber: 0,
+  firstNumber: "",
+  secondNumber: "",
   operation: ""
 }
 
