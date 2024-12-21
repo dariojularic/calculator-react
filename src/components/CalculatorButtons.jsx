@@ -7,7 +7,8 @@ function CalculatorButtons() {
     <div className="buttons-grid">
       {buttons.map((button) => {
         // console.log(button);
-        return <CalculatorActionButton key={button.value} classValue={button.classValue} value={button.value} />;
+        const handler = button.type === "number" ? "jedan handler" : "drugi handler"
+        return <CalculatorActionButton key={button.value} id={button.id} classValue={button.classValue} value={button.value}  />;
       })}
     </div>
   );
