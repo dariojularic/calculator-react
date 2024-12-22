@@ -7,13 +7,15 @@ const CalculatorActionButton = ({ id, value, classValue, handler }) => {
   // console.log(id);
   // console.log(value);
   // console.log(typeof value);
+  console.log(handler())
+
 
   // if (typeof value === "number") console.log("aaaaaaaaaaaaaa");
   return (
     <button
       className={classValue}
       onClick={() => {
-        dispatch(setFirstNumber(value));
+        dispatch(handler(value));
         // dispatch(handler(value));
       }}
     >
