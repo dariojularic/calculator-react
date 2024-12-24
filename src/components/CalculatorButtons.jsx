@@ -14,8 +14,8 @@ const CalculatorButtons = () => {
         // }
         // console.log(handler)
         // console.log(button.type === "number");
-        // const handler =
-        //   button.type === "number" ? setFirstNumber() : setOperation();
+        const handler =
+          button.type === "number" ? setFirstNumber() : setOperation();
 
         console.log("handler", handler);
         // console.log("setFirstNumber", setFirstNumber());
