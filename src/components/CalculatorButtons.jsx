@@ -1,13 +1,13 @@
 import CalculatorActionButton from "./CalculatorActionButton";
 import "./CalculatorButtons.css";
 import buttons from "../data.js";
-// import { setFirstNumber, setOperation } from "../calculatorSlice.js";
+import { setFirstNumber, setOperation } from "../calculatorSlice.js";
 
-const CalculatorButtons = ({ setFirstNumber, setOperation }) => {
+const CalculatorButtons = () => {
   return (
     <div className="buttons-grid">
       {buttons.map((button) => {
-        // console.log(button);
+        // console.log(button)
 
         // const handler = return if (button.type === "number") {
         //   handler = setFirstNumber()
@@ -15,7 +15,7 @@ const CalculatorButtons = ({ setFirstNumber, setOperation }) => {
         // console.log(handler)
         // console.log(button.type === "number");
         const handler =
-          button.type === "number" ? setFirstNumber : setOperation;
+          button.type === "number" ? setFirstNumber() : setOperation();
 
         console.log("handler", handler);
         // console.log("setFirstNumber", setFirstNumber());
