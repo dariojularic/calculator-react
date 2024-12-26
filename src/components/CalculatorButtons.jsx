@@ -12,12 +12,12 @@ const CalculatorButtons = () => {
         // const handler = return if (button.type === "number") {
         //   handler = setFirstNumber()
         // }
-        // console.log(handler)
+        // console.log(setFirstNumber());
         // console.log(button.type === "number");
         const handler =
-          button.type === "number" ? setFirstNumber() : setOperation();
+          button.type === "number" ? () => setFirstNumber(button.value) : () => setOperation(button.value);
 
-        console.log("handler", handler);
+        // console.log("handler", handler());
         // console.log("setFirstNumber", setFirstNumber());
         // console.log("setOperation", setOperation());
         // console.log("button.type", button.type);

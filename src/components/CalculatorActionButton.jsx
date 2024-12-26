@@ -5,10 +5,9 @@ import { setFirstNumber } from "../calculatorSlice";
 const CalculatorActionButton = ({ id, value, classValue, handler }) => {
   const dispatch = useDispatch();
   // console.log(id);
-  // console.log(value);
+  // console.log("value", value);
   // console.log(typeof value);
-  console.log(handler())
-
+  // console.log(handler(value));
 
   // if (typeof value === "number") console.log("aaaaaaaaaaaaaa");
   return (
