@@ -11,18 +11,22 @@ const calculatorSlice = createSlice({
   initialState,
   reducers: {
     setFirstNumber: (state, action) => {
+      if (state.firstNumber.includes(".") && action.payload === ".") return
+      // console.log(typeof state.firstNumber)
       // console.log("state.firstNumber", state.firstNumber)
       // console.log("action.payload", action.payload)
       // console.log("action", action)
-      console.log("state.firstNumber", state.firstNumber)
       state.firstNumber += action.payload
+      // console.log("state.firstNumber", state.firstNumber)
     },
     setOperation: (state, action) => {
       // console.log("state.operation", state.operation)
-      console.log("state.operation", state.operation)
+      state.secondNumber = state.firstNumber
       state.operation = action.payload
+      state.firstNumber = ""
+      // console.log("state.operation", state.operation)
     },
-    // setResult
+
 
   }
 })

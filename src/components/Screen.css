@@ -3,3 +3,21 @@
   height: 20%;
   margin: 16px;
 }
+
+.primary-output {
+  height: 50%;
+  /* background-color: beige; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 24px;
+}
+
+.secondary-output {
+  height: 50% ;
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: 24px;
+}
