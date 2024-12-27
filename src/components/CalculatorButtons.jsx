@@ -8,7 +8,6 @@ const CalculatorButtons = () => {
     <div className="buttons-grid">
       {buttons.map((button) => {
         // console.log(button)
-
         // const handler = return if (button.type === "number") {
         //   handler = setFirstNumber()
         // }
