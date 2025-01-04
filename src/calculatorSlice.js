@@ -34,10 +34,10 @@ const calculatorSlice = createSlice({
         if (action.payload === "=") {
           state.firstNumber = {}
         }
-        if (state.operation === "+") state.secondNumber = parseInt(state.secondNumber) + parseInt(state.firstNumber)
-        if (state.operation === "-") state.secondNumber = state.secondNumber - state.firstNumber
-        if (state.operation === "/") state.secondNumber = state.secondNumber / state.firstNumber
-        if (state.operation === "*") state.secondNumber = state.secondNumber * state.firstNumber
+        // if (state.operation === "+") state.secondNumber = parseInt(state.secondNumber) + parseInt(state.firstNumber)
+        // if (state.operation === "-") state.secondNumber = state.secondNumber - state.firstNumber
+        // if (state.operation === "/") state.secondNumber = state.secondNumber / state.firstNumber
+        // if (state.operation === "*") state.secondNumber = state.secondNumber * state.firstNumber
         // state.operation = action.payload
         state.firstNumber = ""
       }
