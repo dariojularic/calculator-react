@@ -20,12 +20,12 @@ const calculatorSlice = createSlice({
       // console.log("state.firstNumber", state.firstNumber)
     },
     setOperation: (state, action) => {
-      // if (state.firstNumber === "" && state.secondNumber === "") return
-      // if (state.secondNumber === "") {
-      //   state.secondNumber = state.firstNumber
-      //   state.operation = action.payload
-      //   state.firstNumber = ""
-      // }
+      if (state.firstNumber === "" && state.secondNumber === "") return
+      if (state.secondNumber === "") {
+        state.secondNumber = state.firstNumber
+        state.operation = action.payload
+        state.firstNumber = ""
+      }
       if (state.secondNumber !== "") state.operation = action.payload
       if (state.firstNumber !== "" && state.operation !== "" && state.secondNumber !== "") {
         console.log("state.operation", state.operation)
