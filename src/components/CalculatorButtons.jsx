@@ -1,7 +1,7 @@
 import CalculatorActionButton from "./CalculatorActionButton";
 import "./CalculatorButtons.css";
 import buttons from "../data.js";
-import { setFirstNumber, setOperation } from "../calculatorSlice.js";
+import { setFirstNumber, handleOperation } from "../calculatorSlice.js";
 
 const CalculatorButtons = () => {
   return (
@@ -14,7 +14,7 @@ const CalculatorButtons = () => {
         // console.log(setFirstNumber());
         // console.log(button.type === "number");
         const handler =
-          button.type === "number" ? () => setFirstNumber(button.value) : () => setOperation(button.value);
+          button.type === "number" ? () => setFirstNumber(button.value) : () => handleOperation(button.value);
 
         // console.log("handler", handler());
         // console.log("setFirstNumber", setFirstNumber());

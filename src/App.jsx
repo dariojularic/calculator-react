@@ -2,15 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import Screen from "./components/Screen";
 import CalculatorButtons from "./components/CalculatorButtons";
-import { setFirstNumber, setOperation } from "./calculatorSlice";
+import { setFirstNumber, handleOperation } from "./calculatorSlice";
 
 function App() {
   return (
     <div className="calculator-container">
       <Screen />
-      <CalculatorButtons setFirstNumber={setFirstNumber} setOperation={setOperation} />
+      <CalculatorButtons
+      />
     </div>
-  )
+  );
 }
 
 export default App;

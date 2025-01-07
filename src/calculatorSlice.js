@@ -6,34 +6,45 @@ const initialState = {
   operation: ""
 }
 
+// umjesto jedne velike petlje napravit petlju za brojeve i posebno za operacije
+// napravit za clear i delete posebnu komponentu i upisat je u grid sa ostalim buttonima
+// napravit posebne funkcije za operacije (+-/*)
+// napravit operate funkciju
+// parsovat brojeve kod usporedivanja
+// kreni od najlakseg uslova (imam oba broja i operaciju)
+
+
 const calculatorSlice = createSlice({
   name: "calculator",
   initialState,
   reducers: {
     setFirstNumber: (state, action) => {
       if (state.firstNumber.includes(".") && action.payload === ".") return
-      // console.log(typeof state.firstNumber)
-      // console.log("state.firstNumber", state.firstNumber)
-      // console.log("action.payload", action.payload)
-      // console.log("action", action)
       state.firstNumber += action.payload
-      // console.log("state.firstNumber", state.firstNumber)
     },
-    setOperation: (state, action) => {
+    handleOperation: (state, action) => {
       if (state.firstNumber === "" && state.secondNumber === "") return
-      if (state.secondNumber === "") {
+      console.log("state.operation, before", state.operation)
+      console.log("state.firstNumber, before", state.firstNumber)
+      console.log("state.secondNumber, before", state.secondNumber)
+
+      // drugi slucaj, imam first, second i operation
+
+
+      if (state.firstNumber !== "" && state.secondNumber === "") {
         state.secondNumber = state.firstNumber
         state.operation = action.payload
         state.firstNumber = ""
       }
-      if (state.secondNumber !== "") state.operation = action.payload
+      // if (state.secondNumber !== "") state.operation = action.payload
       if (state.firstNumber !== "" && state.operation !== "" && state.secondNumber !== "") {
-        console.log("state.operation", state.operation)
-        console.log("state.firstNumber", state.firstNumber)
-        console.log("state.secondNumber", state.secondNumber)
         if (action.payload === "=") {
           state.firstNumber = {}
         }
+
+
+
+        // oce ovo bit posebna funkcija? di je pisem?
         if (state.operation === "+") state.secondNumber = parseInt(state.secondNumber) + parseInt(state.firstNumber)
         if (state.operation === "-") state.secondNumber = state.secondNumber - state.firstNumber
         if (state.operation === "/") state.secondNumber = state.secondNumber / state.firstNumber
@@ -41,6 +52,10 @@ const calculatorSlice = createSlice({
         // state.operation = action.payload
         state.firstNumber = ""
       }
+      console.log("state.operation, after", state.operation)
+      console.log("state.firstNumber, after", state.firstNumber)
+      console.log("state.secondNumber, after", state.secondNumber)
+
 
       // console.log("state.operation", state.operation)
       // console.log("state.operation", state.operation)
@@ -49,11 +64,16 @@ const calculatorSlice = createSlice({
       state.firstNumber = ""
       state.secondNumber = ""
       state.operation = ""
+    },
+    equal: (state, action) => {
+      if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !=="") {
+        // operate, set the result as firstNumber/secondNumber to display it
+      }
     }
 
 
   }
 })
 
-export const {setFirstNumber, setOperation, clear} = calculatorSlice.actions
+export const {setFirstNumber, handleOperation, clear} = calculatorSlice.actions
 export default calculatorSlice.reducer
