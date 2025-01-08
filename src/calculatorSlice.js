@@ -79,5 +79,5 @@ const calculatorSlice = createSlice({
   }
 })
 
-export const {setFirstNumber, handleOperation, clear} = calculatorSlice.actions
+export const {setFirstNumber, handleOperation, clear, equal} = calculatorSlice.actions
 export default calculatorSlice.reducer
