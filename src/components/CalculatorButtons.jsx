@@ -1,25 +1,42 @@
 import CalculatorActionButton from "./CalculatorActionButton";
 import "./CalculatorButtons.css";
-import buttons from "../data.js";
+import {numbersButtons, operationsButtons, actionButtons} from "../data.js";
 import { setFirstNumber, handleOperation } from "../calculatorSlice.js";
 
 const CalculatorButtons = () => {
   return (
     <div className="buttons-grid">
-      {buttons.map((button) => {
-        // console.log(button)
-        // const handler = return if (button.type === "number") {
-        //   handler = setFirstNumber()
-        // }
-        // console.log(setFirstNumber());
-        // console.log(button.type === "number");
-        const handler =
-          button.type === "number" ? () => setFirstNumber(button.value) : () => handleOperation(button.value);
+      {numbersButtons.map((button) => {
+        return (
+          <CalculatorActionButton
+            key={button.value}
+            id={button.id}
+            classValue={button.classValue}
+            value={button.value}
+            handler={() => setFirstNumber(button.value)}
+          />
+        );
+      })}
 
-        // console.log("handler", handler());
-        // console.log("setFirstNumber", setFirstNumber());
-        // console.log("setOperation", setOperation());
-        // console.log("button.type", button.type);
+      {operationsButtons.map((button) => {
+        return (
+          <CalculatorActionButton
+            key={button.value}
+            id={button.id}
+            classValue={button.classValue}
+            value={button.value}
+            handler={() => handleOperation(button.value)}
+          />
+        );
+      })}
+
+
+
+      {/* {buttons.map((button) => {
+        const handler =
+          button.type === "number"
+            ? () => setFirstNumber(button.value)
+            : () => handleOperation(button.value);
         return (
           <CalculatorActionButton
             key={button.value}
@@ -29,7 +46,7 @@ const CalculatorButtons = () => {
             handler={() => handler()}
           />
         );
-      })}
+      })} */}
     </div>
   );
 };

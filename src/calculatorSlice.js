@@ -36,7 +36,11 @@ const calculatorSlice = createSlice({
         state.operation = action.payload
         state.firstNumber = ""
       }
-      // if (state.secondNumber !== "") state.operation = action.payload
+      if (state.secondNumber !== "" && state.firstNumber === "") {
+        console.log(state.operation)
+        state.operation = action.payload
+        console.log(state.operation)
+      }
       if (state.firstNumber !== "" && state.operation !== "" && state.secondNumber !== "") {
         if (action.payload === "=") {
           state.firstNumber = {}
@@ -65,7 +69,7 @@ const calculatorSlice = createSlice({
       state.secondNumber = ""
       state.operation = ""
     },
-    equal: (state, action) => {
+    equal: (state) => {
       if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !=="") {
         // operate, set the result as firstNumber/secondNumber to display it
       }
