@@ -1,0 +1,27 @@
+.clear-btn {
+  background-color: rgb(61, 175, 61);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+  height: 80px;
+}
+
+.clear-btn:hover {
+  background-color: rgba(61, 175, 61, 0.7);
+}
+
+.delete-btn {
+  background-color: rgb(228, 68, 68);
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0;
+  cursor: pointer;
+  height: 80px;
+}
+
+.delete-btn:hover {
+  background-color: rgba(228, 68, 68, 0.7);
+}

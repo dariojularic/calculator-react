@@ -5,7 +5,7 @@ import { clear, equal } from "../calculatorSlice";
 const ActionButton = ({ id, value, classValue, handler }) => {
   const dispatch = useDispatch();
 
-  return <button>{value}</button>;
+  return <button className={classValue}>{value}</button>;
 };
 
 export default ActionButton;
