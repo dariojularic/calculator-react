@@ -34,7 +34,7 @@ const CalculatorButtons = () => {
               id={button.id}
               classValue={button.classValue}
               value={button.value}
-              handler={() => setFirstNumber(button.value)}
+              handler={() => dispatch(setFirstNumber(button.value))}
             />
           );
         })}
@@ -48,7 +48,7 @@ const CalculatorButtons = () => {
               id={button.id}
               classValue={button.classValue}
               value={button.value}
-              handler={() => handler()}
+              handler={() => dispatch(handler())}
             />
           );
         })}

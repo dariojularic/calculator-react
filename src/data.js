@@ -130,5 +130,3 @@ export const actionButtons = [
     type: "delete"
   },
 ]
-
-// export default { operationsButtons, numbersButtons, actionButtons }
