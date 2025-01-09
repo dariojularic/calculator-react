@@ -2,7 +2,7 @@ import CalculatorActionButton from "./CalculatorActionButton";
 import ActionButton from "./ActionButton.jsx";
 import "./CalculatorButtons.css";
 import { numbersButtons, operationsButtons, actionButtons } from "../data.js";
-import { setFirstNumber, handleOperation } from "../calculatorSlice.js";
+import { setFirstNumber, handleOperation, handleEqual } from "../calculatorSlice.js";
 
 const CalculatorButtons = () => {
   return (
@@ -35,13 +35,16 @@ const CalculatorButtons = () => {
         })}
 
         {operationsButtons.map((button) => {
+          const handler = button.value === "=" ? () => handleEqual() : () => handleOperation(button.value)
+
+
           return (
             <CalculatorActionButton
               key={button.value}
               id={button.id}
               classValue={button.classValue}
               value={button.value}
-              handler={() => handleOperation(button.value)}
+              handler={() => handler()}
             />
           );
         })}

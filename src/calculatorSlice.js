@@ -17,7 +17,7 @@ const operate = (a, b, operation) => {
   if (operation === "*") return parseFloat(a) * parseFloat(b)
   if (operation === "+") return parseFloat(a) + parseFloat(b)
   if (operation === "-") return parseFloat(a) - parseFloat(b)
-  if (operation === "/" && (a === 0 || b === 0)) {
+  if (operation === "/" && (a === "0" || b === "0")) {
     alert("You can't divide by zero!")
     return "";
   } else {
@@ -31,15 +31,15 @@ const calculatorSlice = createSlice({
   reducers: {
     setFirstNumber: (state, action) => {
       if (state.firstNumber.includes(".") && action.payload === ".") return
+      if (state.firstNumber === "" && action.payload === ".") return
+
       state.firstNumber += action.payload
     },
     handleOperation: (state, action) => {
       if (state.firstNumber === "" && state.secondNumber === "") return
 
-      // drugi slucaj, imam first, second i operation
       if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !== "") {
         state.secondNumber = operate(state.secondNumber, state.firstNumber, state.operation)
-        // console.log(action.payload)
         state.operation = action.payload
         state.firstNumber = ""
         return
@@ -62,9 +62,15 @@ const calculatorSlice = createSlice({
       state.secondNumber = ""
       state.operation = ""
     },
-    equal: (state) => {
-      if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !=="") {
+    delete: (state, action) => {
+
+    },
+    handleEqual: (state) => {
+      if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !== "") {
         // operate, set the result as firstNumber/secondNumber to display it
+        state.firstNumber = operate(state.secondNumber, state.firstNumber, state.operation)
+        state.operation = ""
+        state.secondNumber = ""
       }
     }
 
@@ -72,5 +78,5 @@ const calculatorSlice = createSlice({
   }
 })
 
-export const {setFirstNumber, handleOperation, clear, equal} = calculatorSlice.actions
+export const {setFirstNumber, handleOperation, clear, handleEqual} = calculatorSlice.actions
 export default calculatorSlice.reducer

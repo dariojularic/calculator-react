@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./ActionButton.css";
-import { clear, equal } from "../calculatorSlice";
+import { clear, handleEqual } from "../calculatorSlice";
 
 const ActionButton = ({ id, value, classValue, handler }) => {
   const dispatch = useDispatch();
