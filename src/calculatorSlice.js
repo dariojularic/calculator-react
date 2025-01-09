@@ -32,12 +32,11 @@ const calculatorSlice = createSlice({
     setFirstNumber: (state, action) => {
       if (state.firstNumber.includes(".") && action.payload === ".") return
       if (state.firstNumber === "" && action.payload === ".") return
-
       state.firstNumber += action.payload
     },
+
     handleOperation: (state, action) => {
       if (state.firstNumber === "" && state.secondNumber === "") return
-
       if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !== "") {
         state.secondNumber = operate(state.secondNumber, state.firstNumber, state.operation)
         state.operation = action.payload
@@ -57,26 +56,29 @@ const calculatorSlice = createSlice({
         return
       }
     },
-    clear: (state) => {
+
+    handleClear: (state) => {
       state.firstNumber = ""
       state.secondNumber = ""
       state.operation = ""
     },
-    delete: (state, action) => {
 
+    handleDelete: (state) => {
+      if (state.firstNumber !== "") {
+        state.firstNumber = state.firstNumber.substring(0, state.firstNumber.length - 1)
+      }
     },
+
     handleEqual: (state) => {
       if (state.firstNumber !== "" && state.secondNumber !== "" && state.operation !== "") {
-        // operate, set the result as firstNumber/secondNumber to display it
-        state.firstNumber = operate(state.secondNumber, state.firstNumber, state.operation)
+        state.firstNumber = `${operate(state.secondNumber, state.firstNumber, state.operation)}`
         state.operation = ""
         state.secondNumber = ""
+        console.log(state.firstNumber)
       }
     }
-
-
   }
 })
 
-export const {setFirstNumber, handleOperation, clear, handleEqual} = calculatorSlice.actions
+export const {setFirstNumber, handleOperation, handleClear, handleEqual, handleDelete} = calculatorSlice.actions
 export default calculatorSlice.reducer

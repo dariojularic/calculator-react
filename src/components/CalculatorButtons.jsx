@@ -9,6 +9,8 @@ const CalculatorButtons = () => {
     <>
       <div className="action-buttons">
         {actionButtons.map((button) => {
+          // const handler = button.value === "CLEAR" ? () => handleClear() : () => handleDelete()
+
           return (
             <ActionButton
               key={button.key}
@@ -37,7 +39,6 @@ const CalculatorButtons = () => {
         {operationsButtons.map((button) => {
           const handler = button.value === "=" ? () => handleEqual() : () => handleOperation(button.value)
 
-
           return (
             <CalculatorActionButton
               key={button.value}
@@ -48,22 +49,6 @@ const CalculatorButtons = () => {
             />
           );
         })}
-
-        {/* {buttons.map((button) => {
-        const handler =
-        button.type === "number"
-            ? () => setFirstNumber(button.value)
-            : () => handleOperation(button.value);
-            return (
-              <CalculatorActionButton
-              key={button.value}
-              id={button.id}
-              classValue={button.classValue}
-              value={button.value}
-              handler={() => handler()}
-              />
-              );
-              })} */}
       </div>
     </>
   );
