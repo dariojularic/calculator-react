@@ -5,12 +5,11 @@ import { numbersButtons, operationsButtons, actionButtons } from "../data.js";
 import { setFirstNumber, handleOperation, handleEqual, handleClear, handleDelete } from "../calculatorSlice.js";
 import { useDispatch } from "react-redux";
 
-
 const CalculatorButtons = () => {
   const dispatch = useDispatch()
   return (
     <>
-      <div className="action-buttons">
+      <div className="action-buttons" >
         {actionButtons.map((button) => {
           const handler = button.value === "CLEAR" ? () => dispatch(handleClear()) : () => dispatch(handleDelete())
 
