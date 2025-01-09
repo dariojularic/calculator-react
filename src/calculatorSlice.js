@@ -6,13 +6,6 @@ const initialState = {
   operation: ""
 }
 
-// umjesto jedne velike petlje napravit petlju za brojeve i posebno za operacije
-// napravit za clear i delete posebnu komponentu i upisat je u grid sa ostalim buttonima
-// napravit posebne funkcije za operacije (+-/*)
-// napravit operate funkciju
-// parsovat brojeve kod usporedivanja
-// kreni od najlakseg uslova (imam oba broja i operaciju)
-
 const operate = (a, b, operation) => {
   if (operation === "*") return parseFloat(a) * parseFloat(b)
   if (operation === "+") return parseFloat(a) + parseFloat(b)
@@ -74,7 +67,6 @@ const calculatorSlice = createSlice({
         state.firstNumber = `${operate(state.secondNumber, state.firstNumber, state.operation)}`
         state.operation = ""
         state.secondNumber = ""
-        console.log(state.firstNumber)
       }
     }
   }

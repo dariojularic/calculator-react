@@ -1,13 +1,12 @@
-import { useDispatch } from "react-redux";
 import "./ActionButton.css";
 import { handleClear, handleDelete } from "../calculatorSlice";
 
-const ActionButton = ({ value, classValue }) => {
-  const dispatch = useDispatch();
-
-  const handler = value === "CLEAR" ? () => handleClear() : () => handleDelete() // jel ovo radim ovdje ili u CalculatorButtons???
-
-  return <button className={classValue} onClick={() => dispatch(handler())}>{value}</button>;
+const ActionButton = ({ value, classValue, type, handler }) => {
+  // const dispatch = useDispatch();
+  // const handler = value === "CLEAR" ? () => handleClear() : () => handleDelete()
+  // const baseClass = "sve zajednicke klase"
+  // const variation = type === "clear" ? "crveni" : "zeleni"
+  return <button className={classValue} onClick={() => handler()}>{value}</button>;
 };
 
 export default ActionButton;
