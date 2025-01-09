@@ -20,6 +20,7 @@ const CalculatorButtons = () => {
               id={button.id}
               classValue={button.classValue}
               value={button.value}
+              type={button.type}
               handler={() => handler()}
             />
           );
